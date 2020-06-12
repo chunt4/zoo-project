@@ -4,14 +4,13 @@
 // Milestone 2
 // Shreya Kumar
 
-import AnimalPack.Animal;
-
+// import AnimalPack.Animal;
 import java.io.*;
 import java.util.Scanner;
 
 import java.util.ArrayList;
 
-public class Animal{
+abstract class Animal{
 	final Boolean Breathes = true;
 	String SkinType;
 	String Name;
