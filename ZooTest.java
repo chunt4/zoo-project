@@ -239,7 +239,7 @@ public class ZooTest{
 				input = sysInput.nextLine();
 				newAnimal = input.split(" ");
 				if (newAnimal[0].equals("bullfrog")){
-					System.out.println("Enter the Bullfrog's jump height:");
+					System.out.println("Enter the Bullfrog's jump height (ex. 00): ");
 					input = sysInput.nextLine();
 					int inputint = Integer.parseInt(input);
 					String name = newAnimal[1].substring(0, 1).toUpperCase() + newAnimal[1].substring(1);
@@ -280,7 +280,7 @@ public class ZooTest{
 				}
 			}
 			else if (input.equals("delete")){
-				System.out.println("What animal would you like to remove from the zoo?");
+				System.out.println("What animal would you like to remove from the zoo? (Name)");
 				input = sysInput.nextLine();
 				for(int i = 0; i < zooArray.size(); i++){
 					if (input.equals(zooArray.get(i).getName())){
@@ -298,7 +298,7 @@ public class ZooTest{
 					printVerboseList(zooArray);
 					System.out.println("");
 				}else if (input.equals("specific")){
-					System.out.println("Enter the name of the animal: ");
+					System.out.println("Enter the name of the animal: (Name) ");
 					input = sysInput.nextLine();
 					printSpecific(zooArray, input);
 					System.out.println("");
