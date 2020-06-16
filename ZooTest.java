@@ -8,7 +8,7 @@
 import java.io.*;
 import java.util.*;
 
-abstract class Animal{
+public abstract class Animal{
 	final Boolean Breathes = true;
 	String SkinType;
 	String Name;
@@ -60,7 +60,7 @@ abstract class Animal{
 	} */
 }
 
-abstract class Mammal extends Animal{
+public abstract class Mammal extends Animal{
 	Boolean CanineTeeth;
 
 	Mammal(){
@@ -76,7 +76,7 @@ abstract class Mammal extends Animal{
 	
 }
 
-abstract class Bird extends Animal{
+public abstract class Bird extends Animal{
 	Boolean Flight;
 
 	Bird(){
@@ -91,7 +91,7 @@ abstract class Bird extends Animal{
 
 }
 
-abstract class Reptile extends Animal{
+public abstract class Reptile extends Animal{
 	Boolean Amphibian;
 
 
@@ -111,7 +111,7 @@ abstract class Reptile extends Animal{
 }
 
 
-class KomodoDragon extends Reptile{
+public class KomodoDragon extends Reptile{
 	Boolean ForkedTongue;
 
 	KomodoDragon(String name, Boolean forkedTongue){
@@ -129,11 +129,11 @@ class KomodoDragon extends Reptile{
 	public Boolean getForkedTongue(){ return this.ForkedTongue;}
 
 	public void makeSound(){
-		System.out.println("This sound is a defense mechanism for a threatened " + this.getName() + ", who makes a " + this.getSound() + " sound.");
+		System.out.println(" This sound is a defense mechanism for a threatened " + this.getSpecies() + ", who makes a " + this.getSound() + " sound.");
 	}
 }
 
-class Bullfrog extends Reptile{
+public class Bullfrog extends Reptile{
 		int JumpHeight;
 
 		Bullfrog(String name, int jumpHeight){
@@ -153,12 +153,12 @@ class Bullfrog extends Reptile{
 
 
 		public void makeSound(){
-				System.out.println("This sound is a defense mechanism for a threatened " + this.getName() + ", who makes a " + this.getSound() + " sound.");
+				System.out.println(" This sound is a defense mechanism for a threatened " + this.getSpecies() + ", who makes a " + this.getSound() + " sound.");
 		}
 }
 
 
-class Lion extends Mammal{
+public class Lion extends Mammal{
 	Boolean Mane;
 
 	Lion(String name, Boolean Mane){
@@ -176,11 +176,11 @@ class Lion extends Mammal{
 	public Boolean getMane(){ return this.Mane;}
 
 	public void makeSound(){
-		System.out.println("A " + this.getName() + "'s " + this.getSound() + " is mainly used for marking territory, as well as distance");
+		System.out.println(" A " + this.getSpecies() + "'s " + this.getSound() + " is mainly used for marking territory, as well as distance");
 	}
 }
 
-class Capybara extends Mammal{
+public class Capybara extends Mammal{
 	Boolean WebbedFeet;
 
 	Capybara(String name, Boolean WebbedFeet){
@@ -198,11 +198,11 @@ class Capybara extends Mammal{
 	public Boolean getWebbedFeet(){ return this.WebbedFeet;}
 
 	public void makeSound(){
-		System.out.println("When " + this.getName() + "'s are together, they make clicking and whistling sounds, but when they want to sound the alarm, they " + this.getSound());
+		System.out.println(" When " + this.getSpecies() + "'s are together, they make clicking and whistling sounds, but when they want to sound the alarm, they " + this.getSound());
 	}
 }
 
-class Flamingo extends Bird{
+public class Flamingo extends Bird{
 	Boolean OneLeg;
 
 	Flamingo(String name, Boolean OneLeg){
@@ -220,11 +220,11 @@ class Flamingo extends Bird{
 	public Boolean getOneLeg(){ return this.OneLeg;}
 
 	public void makeSound(){
-		System.out.println("Similar to a goose, a " + this.getName() + " makes a " + this.getSound() + " sound.");
+		System.out.println(" Similar to a goose, a " + this.getSpecies() + " makes a " + this.getSound() + " sound.");
 	}
 }
 
-class Emu extends Bird{
+public class Emu extends Bird{
 	Boolean CalfMuscles;
 
 	Emu(String name, Boolean CalfMuscles){
@@ -242,7 +242,7 @@ class Emu extends Bird{
 	public Boolean getCalfMuscles(){ return this.CalfMuscles;}
 
 	public void makeSound(){
-		System.out.println(this.getName() + "'s make a deep " + this.getSound() + " sound");
+		System.out.println(" " + this.getSpecies() + "'s make a deep " + this.getSound() + " sound");
 	}
 }
 
@@ -353,11 +353,105 @@ public class ZooTest{
 		for (int i = 0; i < animals.size(); i++){
 			if(animals.get(i).getName().equals(name)){
 				System.out.printf(" Name: %s\n Species: %s\n Conservation Status: %s\n Eating Habits: %s\n Skin Type: %s\n", animals.get(i).getName(), animals.get(i).getSpecies(), animals.get(i).getConservationStatus(), animals.get(i).getEatingHabit(), animals.get(i).getSkinType());
+				if(animals.get(i).getSpecies().equals("Bullfrog")){
+					String Amph;
+					if(((Bullfrog)animals.get(i)).getAmphibian()){
+						Amph = "True";
+					}
+					else{
+						Amph = "False";
+					}
+					System.out.printf(" Jump Height: %d\n Amphibian: %s\n", ((Bullfrog)animals.get(i)).getJumpHeight(), Amph);
+				}
+				if(animals.get(i).getSpecies().equals("Komodo Dragon")){
+					String Amph, Fork;
+					if(((KomodoDragon)animals.get(i)).getAmphibian()){
+						Amph = "True";
+					}
+					else{
+						Amph = "False";
+					}
+					if(((KomodoDragon)animals.get(i)).getForkedTongue()){
+						Fork = "True";
+					}
+					else{
+						Fork = "False";
+					}
 
+					System.out.printf(" Forked Tongue: %s\n Amphibian: %s\n", Fork, Amph);
+				}
+				if(animals.get(i).getSpecies().equals("Lion")){
+					String CanineTeeth, Mane;
+					if(((Lion)animals.get(i)).getCanineTeeth()){
+						CanineTeeth = "True";
+					}
+					else{
+						CanineTeeth = "False";
+					}
+					if(((Lion)animals.get(i)).getMane()){
+						Mane = "True";
+					}
+					else{
+						Mane = "False";
+					}
+
+					System.out.printf(" Canine Teeth: %s\n Mane: %s\n", CanineTeeth, Mane);
+				}
+				if(animals.get(i).getSpecies().equals("Capybara")){
+					String CanineTeeth, WebbedFeet;
+					if(((Capybara)animals.get(i)).getCanineTeeth()){
+						CanineTeeth = "True";
+					}
+					else{
+						CanineTeeth = "False";
+					}
+					if(((Capybara)animals.get(i)).getWebbedFeet()){
+						WebbedFeet = "True";
+					}
+					else{
+						WebbedFeet = "False";
+					}
+
+					System.out.printf(" Canine Teeth: %s\n Webbed Feet: %s\n", CanineTeeth, WebbedFeet);
+				}
+				if(animals.get(i).getSpecies().equals("Flamingo")){
+					String Flight, OneLeg;
+					if(((Flamingo)animals.get(i)).getFlight()){
+						Flight = "True";
+					}
+					else{
+						Flight = "False";
+					}
+					if(((Flamingo)animals.get(i)).getOneLeg()){
+						OneLeg = "True";
+					}
+					else{
+						OneLeg = "False";
+					}
+
+					System.out.printf(" Can Fly: %s\n Stands on One Leg: %s\n", Flight, OneLeg);
+				}
+				if(animals.get(i).getSpecies().equals("Emu")){
+					String Flight, Calves;
+					if(((Emu)animals.get(i)).getFlight()){
+						Flight = "True";
+					}
+					else{
+						Flight = "False";
+					}
+					if(((Emu)animals.get(i)).getCalfMuscles()){
+						Calves = "True";
+					}
+					else{
+						Calves = "False";
+					}
+
+					System.out.printf(" Can Fly: %s\n Has calf muscles: %s\n", Flight, Calves);
+				}
+				animals.get(i).makeSound();
 			}
 		}
 	}
-
 
 
 	public static void main(String[] args) throws IOException{
