@@ -5,7 +5,8 @@ public abstract class Animal{
 	String Sound;
 	String ConservationStatus;
 	String EatingHabit;
-	String Species; //	Animal[] animalList;
+	String Species;
+
 	public void setSkinType(String skin){
 		this.SkinType = skin;
 	}
@@ -43,4 +44,5 @@ public abstract class Animal{
 		return this.Species;
 	}
 	public abstract void makeSound();
+
 }
