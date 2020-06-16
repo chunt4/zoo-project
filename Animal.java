@@ -7,6 +7,14 @@ public abstract class Animal{
 	String EatingHabit;
 	String Species;
 
+	public String getBreathes(){
+		if (this.Breathes == true){
+			return "true";
+		}else{
+			return "false";
+		}
+	}
+
 	public void setSkinType(String skin){
 		this.SkinType = skin;
 	}

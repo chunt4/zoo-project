@@ -37,7 +37,7 @@ Flamingo.class:
 ZooTest.class:
 	$(JCC) ./ZooTest.java
 
-run: 
+run:	
 	java ZooTest
 
 clean:

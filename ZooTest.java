@@ -114,7 +114,7 @@ public class ZooTest{
 	static public void printSpecific(LinkedList<Animal> animals, String name){
 		for (int i = 0; i < animals.size(); i++){
 			if(animals.get(i).getName().equals(name)){
-				System.out.printf(" Name: %s\n Species: %s\n Conservation Status: %s\n Eating Habits: %s\n Skin Type: %s\n", animals.get(i).getName(), animals.get(i).getSpecies(), animals.get(i).getConservationStatus(), animals.get(i).getEatingHabit(), animals.get(i).getSkinType());
+				System.out.printf(" Name: %s\n Species: %s\n Breathes Above Water: %s\n Conservation Status: %s\n Eating Habits: %s\n Skin Type: %s\n", animals.get(i).getName(), animals.get(i).getSpecies(), animals.get(i).getBreathes(), animals.get(i).getConservationStatus(), animals.get(i).getEatingHabit(), animals.get(i).getSkinType());
 				if(animals.get(i).getSpecies().equals("Bullfrog")){
 					String Amph;
 					if(((Bullfrog)animals.get(i)).getAmphibian()){
