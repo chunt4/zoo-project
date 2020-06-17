@@ -37,12 +37,13 @@ public class ZooTest{
 
 		int total = frogs + drags + lions + capys + flams + emus;
 
-		System.out.printf("Summary:\nThere are %d animals in the zoo.\n Bullfrog(s): %d \n Capybara(s): %d \n Emu(s): %d \n Flamingo(s): %d \n Komodo Dragon(s): %d\n Lion(s): %d",total, frogs, capys, emus, flams, drags, lions);
+		System.out.printf("Summary:\nThere are %d animals in the zoo.\n Bullfrog(s): %d \n Capybara(s): %d \n Emu(s): %d \n Flamingo(s): %d \n Komodo Dragon(s): %d\n Lion(s): %d\n",total, frogs, capys, emus, flams, drags, lions);
 	
 	}
 
 	static void printVerboseList(LinkedList<Animal> animals){
 		int i = 1;
+		System.out.printf("Verbose:\n");
 		System.out.printf("\tName\t\tSpecies\n");
 
 		for (int j = 0; j < animals.size(); j++){
@@ -224,6 +225,12 @@ public class ZooTest{
 		Scanner sysInput = new Scanner(System.in);
 		String input = "";
 		String[] newAnimal;
+
+		printSummaryList(zooArray);
+		System.out.println("");
+		printVerboseList(zooArray);
+
+
 		while(!input.equals("exit")){
 			System.out.println("");
 			System.out.println("Type exit at any time to end the program");
